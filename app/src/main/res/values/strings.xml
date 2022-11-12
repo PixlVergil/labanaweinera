@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Recycler</string>
+    <string name="crt">Create a Contact</string>
+    <string name="search_hint">Name</string>
+    <string name="info">ⓘ</string>
+
+</resources>
