@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">Phone Book</string>
     <string name="crt">Create a Contact</string>
-    <string name="search_hint">Name</string>
+    <string name="search_hint">Search</string>
     <string name="info">ⓘ</string>
+    <string name="cncl">Cancel</string>
+    <string name="sv">Save</string>
+    <string name="name_hint">Name</string>
+    <string name="surname_hint">Surname</string>
+    <string name="phone_hint">Phone Number</string>
+    <string name="date_hint">Date of Birth</string>
 </resources>
