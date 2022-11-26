@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intentInfo)
         }
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
-
+        val phoneDB = DBHelper(this)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
 
