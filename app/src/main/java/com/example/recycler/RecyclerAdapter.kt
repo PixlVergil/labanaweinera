@@ -8,7 +8,7 @@ import com.example.recycler.DBElement
 import com.example.recycler.R
 
 class RecyclerAdapter(
-    private val list: List<DBElement>,
+    private val list: ArrayList<DBElement>,
     private val onItemClick: (id: Int) -> Unit
 ) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -18,8 +18,8 @@ class RecyclerAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.textView.text = list[position]
-
+        val DBElement = list[position]
+        holder.bindView(DBElement)
         holder.button.setOnClickListener {
             onItemClick(holder.adapterPosition)
         }
@@ -33,8 +33,8 @@ class RecyclerAdapter(
         val textView = itemView.findViewById<TextView>(R.id.textView)
         val button = itemView.findViewById<Button>(R.id.buttonInfo)
 
-        fun bindView (std: DBElement) {
-            textView.text = std.name + " " + std.surname
+        fun bindView (DBElement: DBElement) {
+            textView.text = DBElement.name + " " + DBElement.surname
         }
     }
 }
