@@ -4,10 +4,11 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.recycler.DBElement
 import com.example.recycler.R
 
 class RecyclerAdapter(
-    private val list: List<String>,
+    private val list: List<DBElement>,
     private val onItemClick: (id: Int) -> Unit
 ) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -30,8 +31,11 @@ class RecyclerAdapter(
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val textView = itemView.findViewById<TextView>(R.id.textView)
-
         val button = itemView.findViewById<Button>(R.id.buttonInfo)
+
+        fun bindView (std: DBElement) {
+            textView.text = std.name + " " + std.surname
+        }
     }
 }
 
