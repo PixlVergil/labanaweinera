@@ -9,4 +9,11 @@
     <string name="surname_hint">Surname</string>
     <string name="phone_hint">Phone Number</string>
     <string name="date_hint">Date of Birth</string>
+    <string name="bck">Back</string>
+    <string name="chng">Change</string>
+    <string name="del">Delete</string>
+    <string name="name_view">Name: </string>
+    <string name="surname_view">Surname: </string>
+    <string name="date_view">Date of Birth: </string>
+    <string name="phone_view">Phone Number</string>
 </resources>

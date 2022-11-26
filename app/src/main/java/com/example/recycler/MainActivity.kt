@@ -13,12 +13,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val intent1 = Intent(this, InfoScreen::class.java)
-        val intent2 = Intent(this, CrtChgScreen::class.java)
+        val intentInfo = Intent(this, InfoScreen::class.java)
+        val intentCrtChg = Intent(this, CrtChgScreen::class.java)
         val list = mutableListOf<String>()
         val buttonCreate = findViewById<Button>(R.id.buttonCreate)
         val adapter = RecyclerAdapter(list) {
-            startActivity(intent1)
+            startActivity(intentInfo)
         }
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
 
@@ -26,8 +26,7 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = adapter
 
         buttonCreate.setOnClickListener {
-            startActivity(intent2)
+            startActivity(intentCrtChg)
         }
     }
-
 }
