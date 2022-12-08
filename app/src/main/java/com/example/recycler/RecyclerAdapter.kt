@@ -9,7 +9,7 @@ import com.example.recycler.R
 
 class RecyclerAdapter(
     private val list: List<DBElement>,
-    private val onItemClick: (id: Int) -> Unit
+    private val onItemClick: (id: Long) -> Unit
 ) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView = LayoutInflater.from(parent.context)
@@ -24,7 +24,7 @@ class RecyclerAdapter(
         holder.textView.text = text
 
         holder.button.setOnClickListener {
-            onItemClick(holder.adapterPosition)
+            onItemClick(list[position].id)
         }
     }
 

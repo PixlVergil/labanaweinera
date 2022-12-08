@@ -13,7 +13,7 @@ class InfoScreen : AppCompatActivity() {
     private val phoneDB = DBHelper(this)
 
     companion object {
-        val REQUEST_CODE = 1
+        const val REQUEST_CODE = 1
         const val EXTRA_KEY2 = "EXTRA"
         const val RESULT_KEY = "result"
     }
@@ -24,6 +24,7 @@ class InfoScreen : AppCompatActivity() {
         setContentView(R.layout.activity_info_screen)
 
         val id = intent.getLongExtra(MainActivity.EXTRA_KEY, 0)
+        println(id)
         val intentCrtChg = Intent(this, CrtChgScreen::class.java)
         val name = findViewById<TextView>(R.id.nameView)
         val surname = findViewById<TextView>(R.id.surnameView)
@@ -34,10 +35,10 @@ class InfoScreen : AppCompatActivity() {
         val buttonDelete = findViewById<Button>(R.id.buttonDel)
 
         val item = phoneDB.getById(id)
-        name.text = item?.name
-        surname.text = item?.surname
-        date.text = item?.birthday
-        phone.text = item?.phone
+        name.text = "Name: ${item?.name}"
+        surname.text = "Surname: ${item?.surname}"
+        date.text = "Date of Birth: ${item?.birthday}"
+        phone.text = "Phone Number: ${item?.phone}"
 
         buttonChange.setOnClickListener {
             val intent = Intent(this, CrtChgScreen::class.java)

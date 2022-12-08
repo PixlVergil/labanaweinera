@@ -10,7 +10,7 @@ import android.widget.EditText
 class CrtChgScreen : AppCompatActivity() {
     private val phoneDB = DBHelper(this)
     companion object {
-        val REQUEST_CODE2 = 2
+        const val REQUEST_CODE2 = 2
         const val RESULT_KEY2 = "result"
     }
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -9,8 +9,8 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_width="385dp"
-        android:layout_height="719dp"
+        android:layout_width="389dp"
+        android:layout_height="682dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,15 +30,15 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginBottom="10dp"
-            android:rotation="170"
-            android:rotationX="157"
-            android:rotationY="-194"
+            android:rotation="190"
+            android:rotationX="219"
+            android:rotationY="-157"
             android:text="@string/crt" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="580dp" />
+            android:layout_height="531dp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

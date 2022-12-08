@@ -22,25 +22,30 @@
             android:id="@+id/nameView"
             android:layout_width="match_parent"
             android:layout_height="39dp"
-            android:text="@string/name_view" />
+            android:text="@string/name_view"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/surnameView"
             android:layout_width="match_parent"
             android:layout_height="39dp"
-            android:text="@string/surname_view" />
+            android:text="@string/surname_view"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/dateView"
             android:layout_width="match_parent"
             android:layout_height="39dp"
-            android:text="@string/date_view" />
+            android:text="@string/date_view"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/phoneView"
             android:layout_width="match_parent"
             android:layout_height="39dp"
-            android:text="@string/phone_view" />
+            android:text="@string/phone_view"
+            android:textSize="24sp" />
+
     </LinearLayout>
 
     <LinearLayout

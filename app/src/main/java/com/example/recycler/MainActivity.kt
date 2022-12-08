@@ -15,27 +15,25 @@ import com.example.recycler.CrtChgScreen.Companion.REQUEST_CODE2
 class MainActivity : AppCompatActivity() {
     private val list = mutableListOf<DBElement>()
     private val phoneDB = DBHelper(this)
-
+    private lateinit var adapter: RecyclerAdapter
     companion object {
         const val EXTRA_KEY = "EXTRA"
-
+        const val REQUEST_CODE4 = 5
+        const val REQUEST_CODE3 = 666
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-
-        val intentInfo = Intent(this, InfoScreen::class.java)
-        val intentCrtChg = Intent(this, CrtChgScreen::class.java)
         val buttonCreate = findViewById<Button>(R.id.buttonCreate)
 
         list.addAll(phoneDB.getAll())
 
-        val adapter = RecyclerAdapter(list) { id  ->
+        val adapter = RecyclerAdapter(list) { id ->
+            val intentInfo = Intent(this, InfoScreen::class.java)
             intentInfo.putExtra(EXTRA_KEY, id)
-            startActivityForResult(intentInfo, REQUEST_CODE)
+            startActivityForResult(intentInfo, REQUEST_CODE3)
         }
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
 
@@ -43,12 +41,12 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = adapter
 
         buttonCreate.setOnClickListener {
-            startActivityForResult(intentCrtChg, REQUEST_CODE2)
+            val intentCrtChg = Intent(this, CrtChgScreen::class.java)
+            startActivityForResult(intentCrtChg, REQUEST_CODE4)
         }
 
     }
 
-    private lateinit var adapter: RecyclerAdapter
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
